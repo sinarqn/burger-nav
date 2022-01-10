@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #111;
+}
+.navigation{
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 60px;
+    text-transform: uppercase;
+    color: #aaa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.brand{
+    font-size: 24px;
+}
+nav{
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    text-align: end;
+}
+nav li{
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+nav li:hover{
+    color: #666;
+}
+.burger{
+    cursor: pointer;
+    display: none;
+}
+.burger div{
+    background-color: #eee;
+    height: 3px;
+    width: 25px;
+    margin: 3px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .navigation{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "brand burger"
+        "nav nav";
+        height: fit-content;
+        padding: 20px;
+    }
+    .brand{
+        grid-area: brand;
+        text-align: center;
+    }
+    .burger{
+        grid-area: burger;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5.5px,7px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform: rotate(45deg) translate(-5.5px, -7px);
+    }
+    nav{
+        grid-area: nav;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
+    .opened-nav{
+        height: 300px;
+    }
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+        margin-top: 30px;
+        align-items: center;
+    }
+    nav li{
+        margin-top: 20px;
+        width: fit-content;
+    }
+}
