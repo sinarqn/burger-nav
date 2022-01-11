@@ -39,13 +39,6 @@ nav li:hover{
     cursor: pointer;
     display: none;
 }
-.burger div{
-    background-color: #eee;
-    height: 3px;
-    width: 25px;
-    margin: 3px;
-    transition: all 0.3s ease;
-}
 
 @media screen and (max-width: 768px) {
     .navigation{
@@ -58,9 +51,13 @@ nav li:hover{
         padding: 20px;
     }
     .brand{
+		font-size: 18px;
         grid-area: brand;
         text-align: center;
     }
+	.navigation li{
+		font-size: 13px;
+	}
     .burger{
         grid-area: burger;
         display: flex;
@@ -68,14 +65,21 @@ nav li:hover{
         justify-content: center;
         align-items: center;
     }
+.burger div{
+    background-color: #eee;
+    height: 2px;
+    width: 20px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
     .toggle .line1{
-        transform: rotate(-45deg) translate(-5.5px,7px);
+        transform: rotate(-45deg) translate(-5px, 3px);
     }
     .toggle .line2{
         opacity: 0;
     }
     .toggle .line3{
-        transform: rotate(45deg) translate(-5.5px, -7px);
+        transform: rotate(45deg) translate(-5px, -3px);
     }
     nav{
         grid-area: nav;
